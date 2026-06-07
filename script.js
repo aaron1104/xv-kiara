@@ -23,7 +23,7 @@ const invitationData = {
   receptionAddress: "Av. Javier Prado Oeste 1081, San Isidro 15073",
   receptionMap: "https://maps.google.com/?q=Av.%20Javier%20Prado%20Oeste%201081%2C%20San%20Isidro%2015073",
 
-  formLink: "https://forms.gle/",
+  formLink: "https://docs.google.com/forms/d/e/1FAIpQLSfzbV5Iflskzf4rmlEmPvyygiUJcrYJxAS2qb4kVvQolMUqCA/viewform?usp=publish-editor",
   songFormLink: "https://open.spotify.com/playlist/6cbHeqECJxBfpfkUmXrtZA?si=8afaed1fe09c4dca&pt=3e3dc187d6f09602584899435189fa54",
 
   spotifyUrl: "https://open.spotify.com/playlist/6cbHeqECJxBfpfkUmXrtZA",
@@ -33,6 +33,8 @@ const invitationData = {
 const intro = document.getElementById("intro");
 const landing = document.getElementById("landing");
 const openButton = document.getElementById("openInvitation");
+const backgroundMusic = document.getElementById("backgroundMusic");
+const musicToggle = document.getElementById("musicToggle");
 const lanternCelebration = document.getElementById("lanternCelebration");
 const revealItems = document.querySelectorAll(".reveal");
 const parallaxItems = document.querySelectorAll(".parallax");
@@ -77,6 +79,7 @@ function openInvitation() {
   openButton.disabled = true;
   intro.classList.add("is-opening");
   createLanternCelebration();
+  playBackgroundMusic();
 
   window.setTimeout(() => {
     intro.classList.add("is-hidden");
@@ -85,6 +88,35 @@ function openInvitation() {
     landing.removeAttribute("aria-hidden");
     revealItems[0]?.classList.add("is-visible");
   }, 2800);
+}
+
+function playBackgroundMusic() {
+  if (!backgroundMusic) return;
+
+  backgroundMusic.muted = false;
+  backgroundMusic.volume = 0.55;
+  backgroundMusic.load();
+  backgroundMusic.play()
+    .then(() => {
+      musicToggle?.classList.add("is-playing");
+      musicToggle?.classList.remove("has-error");
+    })
+    .catch(() => {
+      musicToggle?.classList.remove("is-playing");
+      musicToggle?.classList.add("has-error");
+    });
+}
+
+function toggleBackgroundMusic() {
+  if (!backgroundMusic) return;
+
+  if (backgroundMusic.paused) {
+    playBackgroundMusic();
+    return;
+  }
+
+  backgroundMusic.pause();
+  musicToggle?.classList.remove("is-playing");
 }
 
 function createLanternCelebration() {
@@ -189,4 +221,5 @@ updateCountdown();
 setInterval(updateCountdown, 1000);
 
 openButton.addEventListener("click", openInvitation);
+musicToggle?.addEventListener("click", toggleBackgroundMusic);
 window.addEventListener("scroll", updateParallax, { passive: true });

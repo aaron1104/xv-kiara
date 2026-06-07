@@ -11,6 +11,10 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body class="is-locked">
+  <video id="backgroundMusic" preload="metadata" loop playsinline>
+    <source src="imagenes/Musica.mp4" type="video/mp4" />
+  </video>
+
   <div class="ambient" aria-hidden="true">
     <span class="spark spark-1"></span>
     <span class="spark spark-2"></span>
@@ -181,51 +185,36 @@
     </section>
 
     <section class="section dress reveal">
-      <div class="section__inner">
-        <div class="dress__panel">
+      <div class="section__inner dress__inner">
+        <div class="dress__panel dress__panel--premium">
           <p class="eyebrow">C&oacute;digo de vestimenta</p>
-          <h2>C&oacute;digo de Vestimenta</h2>
+          <h2>C&Oacute;DIGO DE VESTIMENTA</h2>
           <p class="dress__subtitle">Elegancia para una noche inolvidable</p>
-          <p class="dress__intro">
-            Queremos que esta noche brille tanto como nuestros invitados.
-            Te invitamos a acompa&ntilde;arnos con una vestimenta elegante y acorde a esta ocasi&oacute;n tan especial.
-          </p>
+          <p class="dress__intro">Te invitamos a acompa&ntilde;arnos con una vestimenta formal y elegante para esta celebraci&oacute;n tan especial.</p>
 
-          <div class="dress__guide">
-            <article>
-              <h3>👗 Mujeres</h3>
-              <p>Vestido cocktail, vestido largo o conjunto elegante.</p>
-            </article>
-            <article>
-              <h3>🤵 Hombres</h3>
-              <p>Traje, blazer o camisa formal.</p>
-            </article>
-          </div>
+          <article class="dress-formal-card">
+            <p>&#10024; FORMAL &#10024;</p>
+            <span>Vestimenta formal para una noche m&aacute;gica.</span>
+          </article>
 
-          <div class="dress__palette">
-            <h3>Colores sugeridos</h3>
-            <div class="color-grid">
-              <div class="color-item"><span style="--swatch:#101014"></span><p>Negro</p></div>
-              <div class="color-item"><span style="--swatch:#101c3d"></span><p>Azul noche</p></div>
-              <div class="color-item"><span style="--swatch:#0f5a43"></span><p>Verde esmeralda</p></div>
-              <div class="color-item"><span style="--swatch:#6f1731"></span><p>Borgo&ntilde;a / Vino</p></div>
-              <div class="color-item"><span style="--swatch:#8e8a86"></span><p>Gris elegante</p></div>
-              <div class="color-item"><span style="--swatch:#d7b79d"></span><p>Nude</p></div>
-              <div class="color-item"><span style="--swatch:#d9a7b4"></span><p>Rosa palo</p></div>
+          <div class="dress__reserved dress__reserved--premium">
+            <h3>COLORES RESERVADOS PARA LA TEM&Aacute;TICA</h3>
+            <div class="reserved-colors">
+              <div class="reserved-color">
+                <span class="reserved-color__swatch reserved-color__swatch--morado"></span>
+                <p>Morado</p>
+              </div>
+              <div class="reserved-color">
+                <span class="reserved-color__swatch reserved-color__swatch--lavanda"></span>
+                <p>Lavanda</p>
+              </div>
+              <div class="reserved-color">
+                <span class="reserved-color__swatch reserved-color__swatch--lila"></span>
+                <p>Lila</p>
+              </div>
             </div>
-          </div>
-
-          <div class="dress__reserved">
-            <h3>Colores reservados para la tem&aacute;tica</h3>
-            <div class="color-grid color-grid--reserved">
-              <div class="color-item"><span style="--swatch:#6c2f78"></span><p>Morado</p></div>
-              <div class="color-item"><span style="--swatch:#d9c2ff"></span><p>Lavanda</p></div>
-              <div class="color-item"><span style="--swatch:#c89be8"></span><p>Lila</p></div>
-              <div class="color-item"><span style="--swatch:#d7a84f"></span><p>Dorado</p></div>
-              <div class="color-item"><span style="--swatch:#ffe176"></span><p>Amarillo</p></div>
-            </div>
-            <p>Estos colores forman parte de la tem&aacute;tica principal de la celebraci&oacute;n y estar&aacute;n presentes en la decoraci&oacute;n y vestimenta de la quincea&ntilde;era.</p>
-            <p class="dress__final">Agradecemos evitar estos tonos para conservar la armon&iacute;a visual del evento.</p>
+            <p>Estos tonos forman parte de la tem&aacute;tica principal de la celebraci&oacute;n y estar&aacute;n presentes en la decoraci&oacute;n y detalles de la quincea&ntilde;era.</p>
+            <p class="dress__final">Agradecemos evitar estos colores para conservar la armon&iacute;a visual del evento.</p>
           </div>
         </div>
       </div>
@@ -235,10 +224,12 @@
       <div class="chapter-lanterns chapter-lanterns--gifts" aria-hidden="true">
         <span></span><span></span><span></span>
       </div>
-      <div class="section__inner narrow">
-        <p class="ornament">XV</p>
-        <h2>Mesa de regalos</h2>
-        <p>Mi mejor regalo es compartir contigo este gran d&iacute;a. Sin embargo, si deseas tener un detalle, puedes considerar lluvia de sobres.</p>
+      <div class="section__inner gifts__inner">
+        <h2>REGALOS</h2>
+        <div class="gift-envelope" aria-hidden="true">
+          <span></span>
+        </div>
+        <p>Lluvia de sobres</p>
       </div>
     </section>
 
@@ -253,6 +244,10 @@
       </div>
     </section>
   </main>
+
+  <button class="music-toggle" id="musicToggle" type="button" aria-label="Activar o pausar m&uacute;sica">
+    M&uacute;sica
+  </button>
 
   <script src="script.js"></script>
 </body>

@@ -27,7 +27,7 @@ const invitationData = {
   receptionPlace: "Centro Aeronautico de la FAP - Salon Revoredo",
   receptionAddress: "Av. Javier Prado Oeste 1081, San Isidro 15073",
   receptionMap: "https://maps.google.com/?q=Av.%20Javier%20Prado%20Oeste%201081%2C%20San%20Isidro%2015073",
-  formLink: "https://forms.gle/",
+  formLink: "https://docs.google.com/forms/d/e/1FAIpQLSfzbV5Iflskzf4rmlEmPvyygiUJcrYJxAS2qb4kVvQolMUqCA/viewform?usp=publish-editor",
   spotifyUrl: "https://open.spotify.com/playlist/...",
   spotifyEmbedUrl: "https://open.spotify.com/embed/playlist/..."
 };
@@ -52,3 +52,13 @@ El Google Forms debe pedir:
 ## Vista local
 
 Puedes abrir `index.html` directamente en el navegador. No necesita frameworks, build ni servidor.
+
+## Musica de fondo
+
+La musica de fondo usa el archivo:
+
+```text
+imagenes/Musica.mp4
+```
+
+La musica inicia cuando el invitado presiona el sobre. Usa un archivo propio o con permiso de uso.
