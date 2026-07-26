@@ -11,7 +11,7 @@ const invitationData = {
   eventDate: "2026-07-31T18:30:00",
   parents: "Aaron Melgar y Noelia Taramona",
   godparents: "",
-  rsvpDeadline: "15 de julio",
+  rsvpDeadline: "27 de julio",
 
   ceremonyPlace: "Centro Aeron\u00e1utico de la FAP - Sal\u00f3n Revoredo",
   ceremonyTime: "6:30 p.m.",
